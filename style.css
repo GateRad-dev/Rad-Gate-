@@ -1,0 +1,82 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  color: #333;
+  margin-top: 20px;
+}
+
+#puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.tile {
+  width: 80px;
+  height: 80px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.tile:hover {
+  background-color: #bbb;
+}
+
+.empty {
+  background-color: transparent;
+  box-shadow: none;
+  cursor: default;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#win-message {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: green;
+  text-shadow: 1px 1px 3px rgba(0, 128, 0, 0.2);
+}
+
+#secret-message {
+  animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.9; }
+  100% { opacity: 1; }
+}
